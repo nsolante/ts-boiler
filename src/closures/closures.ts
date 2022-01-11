@@ -1,30 +1,44 @@
+const meNo = " likey";
+
 function outerFunction() {
   const outer = `I see the outer variable!`;
 
   function innerFunction() {
+    const innerMe = "hello";
+    console.log(innerMe);
     console.log(outer);
+    console.log(meNo);
   }
 
   return innerFunction;
 }
 
-const hello = outerFunction() | outerFunction()(); // I see the outer variable!
+// function oun() {
+//   console.log(meNo);
+// }
 
-// or
+// oun();
+outerFunction()();
 
-function outerFunction() {
-  const outer = `I see the outer variable!`;
+// function name (args ) use (variable){}
 
-  return {
-    innerFunction() {
-      console.log(outer);
-    },
-  };
-}
-
-const { innerFunction } = outerFunction();
-
-innerFunction();
+// const hello =  outerFunction()(); // I see the outer variable!
+//
+// // or
+//
+// function outerFunction() {
+//   const outer = `I see the outer variable!`;
+//
+//   return {
+//     innerFunction() {
+//       console.log(outer);
+//     },
+//   };
+// }
+//
+// const { innerFunction } = outerFunction();
+//
+// innerFunction();
 
 //Since closures have access to the variables in the outer function, they are usually used for two things:
 //
